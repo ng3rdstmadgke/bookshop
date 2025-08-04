@@ -22,7 +22,6 @@
   },
 
   "forwardPorts": [
-    "sample-app-${localEnv:USER}:8000"
   ],
 
   "mounts": [
