@@ -1,0 +1,2 @@
+- [クラウドネイティブで実現する マイクロサービス開発・運用 実践ガイド | 技術評論社](https://gihyo.jp/book/2023/978-4-297-13783-0)
+- [gihyo-ms-dev-book | GitLab](https://gitlab.com/gihyo-ms-dev-book)
