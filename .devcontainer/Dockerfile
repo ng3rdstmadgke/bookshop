@@ -25,7 +25,8 @@ RUN apt-get update && \
       groff \
       procps \
       default-mysql-client \
-      python3.12
+      python3.12 \
+      protobuf-compiler
 
 # ロケール設定
 RUN echo 'ja_JP.UTF-8 UTF-8' >> /etc/locale.gen && \
@@ -80,3 +81,27 @@ ENV PATH="$PATH:/home/vscode/.pypoetry/bin"
 RUN wget https://github.com/alexei-led/spotinfo/releases/download/1.0.7/spotinfo_linux_amd64 && \
     chmod 755 spotinfo_linux_amd64 && \
     mv spotinfo_linux_amd64 /usr/local/bin/spotinfo
+
+# Node.js インストール (https://github.com/nodesource/distributions/blob/master/DEV_README.md)
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh && \
+    bash nodesource_setup.sh && \
+    apt-get install -y nodejs && \
+    rm nodesource_setup.sh
+
+# Go インストール
+RUN wget https://go.dev/dl/go1.24.5.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.24.5.linux-amd64.tar.gz
+ENV PATH=$PATH:/usr/local/go/bin
+
+# Protocol Buffers用のGoプラグインインストール
+RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28 && \
+    go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
+
+RUN curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.29.0/kind-linux-amd64 && \
+    chmod +x ./kind && \
+    mv ./kind /usr/local/bin/kind
+
+USER vscode
+
+# istioctl インストール
+RUN curl -sL https://istio.io/downloadIstioctl | sh -
+ENV PATH=/home/vscode/.istioctl/bin:$PATH
