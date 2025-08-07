@@ -5,7 +5,7 @@
 
 ```bash
 (
-  cd $PROJECT_DIR/backend/catalogue/proto/book && \
+  cd $PROJECT_DIR/application/catalogue/proto/book && \
   protoc \
     --go_out=. \
     --go_opt=paths=source_relative \
@@ -18,7 +18,7 @@
 # バックエンドサービスの実装
 
 ```bash
-cd $PROJECT_DIR/backend/catalogue
+cd $PROJECT_DIR/application/catalogue
 
 go mod init gihyo/catalogue
 
@@ -28,7 +28,10 @@ go get google.golang.org/grpc
 # 起動
 
 ```bash
-go run main.go
+(
+  cd $PROJECT_DIR/application/catalogue &&
+  go run main.go
+)
 ```
 
 

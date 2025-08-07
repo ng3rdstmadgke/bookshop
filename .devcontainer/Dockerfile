@@ -92,15 +92,17 @@ RUN curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh && \
 RUN wget https://go.dev/dl/go1.24.5.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.24.5.linux-amd64.tar.gz
 ENV PATH=$PATH:/usr/local/go/bin
 
-# Protocol Buffers用のGoプラグインインストール
-RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28 && \
-    go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
-
 RUN curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.29.0/kind-linux-amd64 && \
     chmod +x ./kind && \
     mv ./kind /usr/local/bin/kind
 
 USER vscode
+
+# Protocol Buffers用のGoプラグインインストール
+RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28 && \
+    go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
+
+RUN go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
 
 # istioctl インストール
 RUN curl -sL https://istio.io/downloadIstioctl | sh -

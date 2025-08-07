@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "backend/catalogue/proto/book";
+option go_package = "ktamido/catalogue/proto/book";
 
 package book;
 
