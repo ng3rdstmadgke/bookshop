@@ -1,6 +1,7 @@
 #!/bin/bash
 
-export $(cat ${PROJECT_DIR}/.devcontainer/.env | grep -v -e "^$" -e "^ *#" | sed -e "s| *#.*$||" | xargs)
+CUSTOM_ENVS=$(cat ${PROJECT_DIR}/.devcontainer/.env | grep -v -e "^$" -e "^ *#" | sed -e "s| *#.*$||" | xargs)
+[ -n "$CUSTOM_ENVS" ] && export $CUSTOM_ENVS
 
 source <(kubectl completion bash)
 source <(helm completion bash)
