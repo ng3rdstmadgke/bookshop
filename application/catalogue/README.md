@@ -1,4 +1,6 @@
 - [gihyo-ms-dev-book/handson/sec2/2.2.1-backend/catalogue | GitLab](https://gitlab.com/gihyo-ms-dev-book/handson/sec2/2.2.1-backend/catalogue)
+- [gihyo-ms-dev-book/handson/sec2/2.2.2-bff/catalogue | GitLab](https://gitlab.com/gihyo-ms-dev-book/handson/sec2/2.2.2-bff/catalogue)
+- [gihyo-ms-dev-book/handson/sec2/2.2.3-frontend/catalogue | GitLab](https://gitlab.com/gihyo-ms-dev-book/handson/sec2/2.2.3-frontend/catalogue)
 
 # プロジェクト作成
 

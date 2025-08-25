@@ -1,4 +1,5 @@
 - [gihyo-ms-dev-book/handson/sec2/2.2.2-bff/bff | GitLab](https://gitlab.com/gihyo-ms-dev-book/handson/sec2/2.2.2-bff/bff)
+- [gihyo-ms-dev-book/handson/sec2/2.2.2-frontend/bff | GitLab](https://gitlab.com/gihyo-ms-dev-book/handson/sec2/2.2.3-frontend/bff)
 
 # プロジェクト作成
 
