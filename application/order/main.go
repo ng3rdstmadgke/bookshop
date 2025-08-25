@@ -38,16 +38,17 @@ func main() {
 	// チャンネルの作成
 	ch, err := conn.Channel()
 	failOnError(err, "Failed to open a channel")
-	defer conn.Close()
+	defer ch.Close()
 
 	// キューの宣言
+	// https://pkg.go.dev/github.com/rabbitmq/amqp091-go@v1.10.0#Channel.QueueDeclare
 	q, err := ch.QueueDeclare(
-		"order", // 名前
-		false,   // 永続的 (キューはブローカの再起動後も存続)
-		false,   // 未使用の場合削除
-		false,   // 排他的(1つの接続のみで使用され、その接続が閉じるとキューは削除)
-		false,   // 待機なし
-		nil,     // 引数(オプション)
+		"order", // name string キューの名前
+		false,   // durable サーバーが落ちるとキューも消える
+		false,   // autoDelete Consumerがいなくてもキューは残り続ける
+		false,   // exclusive 複数接続から利用可能
+		false,   // noWait bool サーバーからの応答を待つ
+		nil,     // args Table 引数(オプション)
 	)
 	failOnError(err, "Failed to declare a queue")
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
@@ -65,6 +66,7 @@ func main() {
 	failOnError(err2, "Failed to marshal")
 
 	// メッセージをキューにパブリッシュ
+	// https://pkg.go.dev/github.com/rabbitmq/amqp091-go@v1.10.0#Channel.PublishWithContext
 	err = ch.PublishWithContext(ctx,
 		"",     // exchange
 		q.Name, // routing key (キュー名)

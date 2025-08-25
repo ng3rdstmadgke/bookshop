@@ -21,8 +21,11 @@ go get github.com/rabbitmq/amqp091-go
 # 実行
 
 ```bash
+# orderからメッセージを送信すると受信する
 (
   cd $PROJECT_DIR/application/shipping &&
   go run main.go
 )
+# 2025/08/26 00:45:58 Received a message: {"ID":"test_id","CustomerId":"test","CustomerName":"customer name","OrderItem":[]}
+# ...
 ```
