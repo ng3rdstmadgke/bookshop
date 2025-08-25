@@ -11,7 +11,7 @@ console.log(clientUri)
 const client = new catalogue_proto.Catalogue(
     clientUri, grpc.credentials.createInsecure()
 )
-        
+
 export class CatalogueDataSource {
     constructor(options) {
         this.client = client

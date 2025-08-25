@@ -1,5 +1,15 @@
 - [gihyo-ms-dev-book/handson/sec2/2.2.1-backend/catalogue | GitLab](https://gitlab.com/gihyo-ms-dev-book/handson/sec2/2.2.1-backend/catalogue)
 
+# プロジェクト作成
+
+```bash
+cd $PROJECT_DIR/application/catalogue
+
+go mod init gihyo/catalogue
+
+go get google.golang.org/grpc
+```
+
 # gRPCサービスのコンパイル
 
 
@@ -13,16 +23,6 @@
     --go-grpc_opt=paths=source_relative \
     catalogue.proto
 )
-```
-
-# バックエンドサービスの実装
-
-```bash
-cd $PROJECT_DIR/application/catalogue
-
-go mod init gihyo/catalogue
-
-go get google.golang.org/grpc
 ```
 
 # 起動

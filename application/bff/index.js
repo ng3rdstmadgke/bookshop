@@ -29,15 +29,19 @@ app.use(
   '/graphql',
   cors(),
   bodyParser.json(),
+  // expressMiddlewareとはGraphQLサーバーをExpressアプリケーションに統合するためのミドルウェア
+  // NOTE: Expressはリクエストをミドルウェアという関数チェーンで処理する
   expressMiddleware(server, {
     context: async ({ req }) => {
         return {
           dataSources: {
+            // catalog.jsをdatasourceとして利用できるようにする
             catalogueApi: new CatalogueDataSource()
           }
         }
       }
-    }),
+    }
+  ),
 );
 
 app.listen(4000)

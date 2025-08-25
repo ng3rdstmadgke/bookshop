@@ -1,18 +1,20 @@
 - [gihyo-ms-dev-book/handson/sec2/2.2.2-bff/bff | GitLab](https://gitlab.com/gihyo-ms-dev-book/handson/sec2/2.2.2-bff/bff)
 
-# Apollo Serverの実行に必要なライブラリのインストール
+# プロジェクト作成
 
 ```bash
 cd $PROJECT_DIR/application/bff
 npm init --yes
-npm install @apollo/server express graphql cors body-parser
+npm install @apollo/server express graphql cors body-parser @grpc/grpc-js @grpc/proto-loader
 ```
 
 # GraphQLを起動
 
 ```bash
-cd $PROJECT_DIR/application/bff
-npm start
+(
+  cd $PROJECT_DIR/application/bff
+  npm start
+)
 ```
 
 http://localhost:4000/graphql にアクセス
