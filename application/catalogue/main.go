@@ -40,7 +40,7 @@ var (
 	books = []Book{book1, book2}
 )
 
-func getBook(i int32) Book {
+func getBook(i int) Book {
 	return books[i-1]
 }
 
@@ -52,7 +52,7 @@ type server struct {
 // 自動生成された`catalogue_grpc.pb.go`の`GetBook`インターフェースを実装。
 func (s *server) GetBook(ctx context.Context, in *pb.GetBookRequest) (*pb.GetBookResponse, error) {
 	// リクエストで指定されたIDに応じて返す書籍情報を取得
-	book := getBook(in.Id)
+	book := getBook(int(in.Id))
 
 	// レスポンス用のデータを作成
 	protoBook := &pb.Book{
@@ -68,7 +68,7 @@ func (s *server) GetBook(ctx context.Context, in *pb.GetBookRequest) (*pb.GetBoo
 
 // 自動生成された`catalogue_grpc.pb.go`の`ListBooks`インターフェースを実装。
 func (s *server) ListBooks(ctx context.Context, in *emptypb.Empty) (*pb.ListBooksResponse, error) {
-	// 書籍情報のリストを作成
+	// レスポンス用のデータを作成
 	protoBooks := make([]*pb.Book, 0)
 
 	for _, book := range books {
