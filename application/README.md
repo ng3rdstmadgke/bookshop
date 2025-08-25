@@ -1,3 +1,7 @@
+# アーキテクチャ
+
+![アーキテクチャ](../docs/img/architecture.png)
+
 # 起動方法
 
 gRPCサーバーの起動
