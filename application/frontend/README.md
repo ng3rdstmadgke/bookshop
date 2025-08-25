@@ -1,4 +1,6 @@
-- [gihyo-ms-dev-book/handson/sec2/2.2.3-frontend/frontend | GitLab](https://gitlab.com/gihyo-ms-dev-book/handson/sec2/2.2.3-frontend/frontend)
+- sec2
+  - [gihyo-ms-dev-book/handson/sec2/2.2.3-frontend/frontend | GitLab](https://gitlab.com/gihyo-ms-dev-book/handson/sec2/2.2.3-frontend/frontend)
+  - [gihyo-ms-dev-book/handson/sec2/2.2.4-deploy/frontend | GitLab](https://gitlab.com/gihyo-ms-dev-book/handson/sec2/2.2.4-deploy/frontend)
 
 
 # プロジェクト作成

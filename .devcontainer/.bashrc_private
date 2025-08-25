@@ -15,3 +15,4 @@ complete -C '/usr/local/bin/aws_completer' aws
 complete -C '/usr/local/bin/terraform' terraform
 
 export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="$PATH:$PROJECT_DIR/bin"
