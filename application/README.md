@@ -1,6 +1,8 @@
 # アーキテクチャ
 
-![アーキテクチャ](../docs/img/architecture.png)
+![アーキテクチャ 1](../docs/img/architecture_01.png)
+
+![アーキテクチャ 2](../docs/img/architecture_02.png)
 
 # 起動方法
 
