@@ -1,23 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
+import { gql } from '@apollo/client';
+import { useQuery } from '@apollo/client/react';
+
+const LIST_BOOKS = gql`
+  query ListBooks {
+    books {
+      id
+      title
+      author
+      price
+    }
+  }
+`;
+
 
 function App() {
+  const { loading, error, data } = useQuery(LIST_BOOKS);
+
+  if (loading) return "Loading...";
+  if (error) return `Error! ${error.message}`;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <table>
+        <tr>
+          <th>書籍名</th>
+          <th>著者</th>
+          <th>価格&nbsp;(円)</th>
+        </tr>
+        {
+          data.books.map(
+            (row) => (
+              <tr>
+                <td>{row.title}</td>
+                <td>{row.author}</td>
+                <td align="right">{row.price}</td>
+              </tr>
+            )
+          )
+        }
+      </table>
     </div>
   );
 }

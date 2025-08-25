@@ -4,9 +4,11 @@
 # プロジェクト作成
 
 ```bash
-cd 
+cd $PROJECT_DIR/application
 npx create-react-app frontend
-cd $PROJECT_DIR/application/frontend
+cd frontend
+
+npm install @apollo/client graphql
 ```
 
 # アプリのビルド
@@ -18,7 +20,11 @@ npm run build
 # アプリの起動
 
 ```bash
-npm start
+(
+  cd $PROJECT_DIR/application/frontend &&
+  npm start
+)
+
 ```
 
 - http://localhost:3000 にアクセス

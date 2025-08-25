@@ -13,7 +13,7 @@ npm install @apollo/server express graphql cors body-parser @grpc/grpc-js @grpc/
 
 ```bash
 (
-  cd $PROJECT_DIR/application/bff
+  cd $PROJECT_DIR/application/bff &&
   npm start
 )
 ```
