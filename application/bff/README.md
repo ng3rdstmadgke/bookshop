@@ -2,6 +2,8 @@
   - [gihyo-ms-dev-book/handson/sec2/2.2.2-bff/bff | GitLab](https://gitlab.com/gihyo-ms-dev-book/handson/sec2/2.2.2-bff/bff)
   - [gihyo-ms-dev-book/handson/sec2/2.2.3-frontend/bff | GitLab](https://gitlab.com/gihyo-ms-dev-book/handson/sec2/2.2.3-frontend/bff)
   - [gihyo-ms-dev-book/handson/sec2/2.2.4-deploy/bff | GitLab](https://gitlab.com/gihyo-ms-dev-book/handson/sec2/2.2.4-deploy/bff)
+- sec3
+  - [gihyo-ms-dev-book/handson/sec3/3.2-reliability/bff | GitLab](https://gitlab.com/gihyo-ms-dev-book/handson/sec3/3.2-reliability/bff)
 
 # プロジェクト作成
 
